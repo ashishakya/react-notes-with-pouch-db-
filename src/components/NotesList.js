@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export default function NotesList({notes}) {
     return (
@@ -6,7 +7,7 @@ export default function NotesList({notes}) {
             {notes.map(note => {
                return (
                     <div>
-                        <h2>{note.title}</h2>
+                        <Link to={`/notes/${note._id}`}><h2>{note.title}</h2></Link>
                     </div>
                 )
             })}
