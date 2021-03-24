@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from "react";
+import Dashboard from "./pages/Dashboard";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    const [notes, setNotes] = useState([
+        { _id: 1, title: "First note", body: "this is body of my first note", updated_at: new Date()},
+        { _id: 2, title: "Second note", body: "this is body of my Second note", updated_at: new Date()}
+    ])
+    return (
+        <div className="App">
+            <Dashboard notes={notes}/>
+        </div>
+    );
 }
 
-export default App;
